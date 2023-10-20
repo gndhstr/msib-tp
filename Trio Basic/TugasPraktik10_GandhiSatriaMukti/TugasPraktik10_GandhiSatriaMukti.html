@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>Tugas Praktik 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="body"  style="font-family: 'Poppins', sans-serif;">
+<center>
+    <h2 id="title">Nyancat.</h2>
+
+    <div id="img">
+        <img width=1000px src="https://www.icegif.com/wp-content/uploads/2022/12/icegif-286.gif" alt="nyancat" style="position:absolute ; left:-20rem; z-index:-1; bottom:2rem;">
+    </div>
+
+    <br>
+    <p>ubah background</p>
+
+    <button onclick="warna('pink')">Pink</button>
+    <button onclick="warna('lightblue')">Biru</button>
+    <button onclick="warna('lightgreen')">Hijau</button>
+    <button onclick="warna('yellow')">Kuning</button>
+
+    <p>tekan <b>W</b> agar nyancat maju</p>
+    <p>tekan <b>S</b> agar nyancat mundur</p>
+
+</center>
+
+    <script>
+        function warna(warni) {
+            document.getElementById("body").style.background = warni;
+        }
+
+        function changeImgold () {
+            let oldImg = '<img width=1000px src="https://www.icegif.com/wp-content/uploads/2022/12/icegif-286.gif" alt="nyancat" style="position:absolute ; left:-20rem; z-index:-1; transition: 1s; bottom:2rem;">';
+            document.getElementById("img").innerHTML = oldImg;
+        }
+
+        function changeImg () {
+            let newImg = '<img width=1000px src="https://www.icegif.com/wp-content/uploads/2022/12/icegif-286.gif" alt="nyancat" style="position:absolute ; left:0rem; z-index:-1; transition: 1s; bottom:2rem;">';
+            document.getElementById("img").innerHTML = newImg;
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "w") {
+                changeImg("newImg");
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "s") {
+                changeImgold();
+            }
+        });
+
+        var titleJs = document.getElementById("title");
+        setInterval(function () {
+            titleJs.style.color = "red";
+            setTimeout(function () {
+                titleJs.style.color = "green";
+            }, 500)
+        }, 1000)
+    </script>
+</body>

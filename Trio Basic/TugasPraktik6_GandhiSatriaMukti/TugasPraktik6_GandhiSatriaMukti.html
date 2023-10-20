@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+    <title>Tugas Praktik 6</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    h3{
+        text-align: center;
+    }
+    body{
+        font-family: 'Poppins', sans-serif;
+        margin: 2rem 4rem;
+    }
+    .card-container{
+        display: inline-flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+    }
+    .card{
+        transition: 0.2s;
+        width: 300px;
+        height: 400px;
+        background: #1d1d1d;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        color: white;
+        box-shadow:
+        0px 6px 15px rgba(0, 0, 0, 0.32)
+    }
+    .card:hover{
+        transition: 0.2s;
+        width: 325px;
+        height: 425px;
+    }
+    .img{
+        width: 250px;
+        height: 180px;
+    }
+    .title{
+        margin: 0;
+        margin-top: 1rem;
+    }
+    .detail {
+        margin: 1rem 0 2rem;
+        font-size: 14px;
+    }
+    .btn{
+        text-decoration: none;
+        background: rgb(231,170,209);
+        background: linear-gradient(360deg, rgba(231,170,209,1) 0%, rgba(230,63,170,1) 100%);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #1d1d1d;
+    }
+    .btn-outline{
+        background: transparent;
+        border: 1.5px solid rgba(230,63,170,1);
+        color: white;
+    }
+    .btn:hover{
+        background: transparent;
+        border: 1.5px solid rgba(230,63,170,1);
+        color: white;
+    }
+    .btn-outline:hover{
+        text-decoration: none;
+        background: rgb(231,170,209);
+        background: linear-gradient(360deg, rgba(231,170,209,1) 0%, rgba(230,63,170,1) 100%);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #1d1d1d;
+    }
+    span{
+        color:rgba(230,63,170,1) ;
+    }
+</style>
+<body>
+    <h3>Toko Oleh Oleh <span>Cak Bayu</span>.</h3>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://cdn0-production-images-kly.akamaized.net/YFW5AasTeadg-2cyVgKdNniNY7o=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3168274/original/097466500_1593673392-fried-spring-rolls-cutting-board_1150-17010.jpg" alt="img1" class="img">
+            <h4 class="title">Lumpia<span>.</span></h4>
+            <p class="detail">Makanan khas Semarang.</p>
+            <div>
+                <a href="" class="btn">Detail</a>
+                <a href="" class="btn btn-outline">Beli</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://img-global.cpcdn.com/recipes/9504cf67ccdb2eee/1360x964cq70/mie-aceh-devina-hermawan-foto-resep-utama.webp" alt="img1" class="img">
+            <h4 class="title">Mie Aceh<span>.</span></h4>
+            <p class="detail">Makanan khas Aceh.</p>
+            <div>
+                <a href="" class="btn">Detail</a>
+                <a href="" class="btn btn-outline">Beli</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i0.wp.com/www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Pulau-Sumatra.jpg?resize=768%2C512&ssl=1" alt="img1" class="img">
+            <h4 class="title">Rendang<span>.</span></h4>
+            <p class="detail">Makanan khas Sumatera Barat.</p>
+            <div>
+                <a href="" class="btn">Detail</a>
+                <a href="" class="btn btn-outline">Beli</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://i0.wp.com/www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Pulau-Jawa.jpg?resize=1024%2C683&ssl=1" alt="img1" class="img">
+            <h4 class="title">Kerak Telor<span>.</span></h4>
+            <p class="detail">Makanan khas DKI Jakarta.</p>
+            <div>
+                <a href="" class="btn">Detail</a>
+                <a href="" class="btn btn-outline">Beli</a>
+            </div>
+        </div>
+    </div>
+
+</body>

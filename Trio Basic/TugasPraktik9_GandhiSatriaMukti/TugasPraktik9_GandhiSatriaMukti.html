@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Tugas Praktik 9</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body  style="font-family: 'Poppins', sans-serif;">
+<center>
+    <h2 id="title">KUCING Js.</h2>
+    <p>miaw.</p>
+
+    <div id="img"></div>
+
+    <button onclick=berlari()>Kucing Berlari</button>
+    <button onclick=menangis()>Kucing Menangis</button>
+
+</center>
+
+    <script>
+        function menangis() {
+            let newImg = "<img src='https://steamuserimages-a.akamaihd.net/ugc/2055373930161334077/DD84FB409961A9D883FBC3531721ACE7F35E94E0/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true' alt='menangis'>";
+            document.getElementById("img").innerHTML = newImg;
+        }
+        function berlari(){
+            let newImg = "<img src='https://www.icegif.com/wp-content/uploads/2023/06/icegif-154.gif' alt='berlari'>";
+            document.getElementById("img").innerHTML = newImg;
+        }
+
+        var titleJs = document.getElementById("title");
+        setInterval(function () {
+            titleJs.style.color = "red";
+            setTimeout(function () {
+                titleJs.style.color = "green";
+            }, 500)
+        }, 1000)
+    </script>
+</body>

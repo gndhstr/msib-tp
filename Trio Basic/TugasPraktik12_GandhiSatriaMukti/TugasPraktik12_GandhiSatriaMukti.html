@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Tugas Praktik 12</title>
+</head>
+<body>
+    <h1>Program Pembagian Sederhana</h1>
+
+    <label for="bilangan1">Bilangan 1:</label>
+    <input type="number" id="bilangan1">
+    <br><br>
+    <label for="bilangan2">Bilangan 2:</label>
+    <input type="number" id="bilangan2">
+
+    <br><br>
+    <button onclick="debug()">Hitung</button>
+    <h1 id="hasil"></h1>
+
+    <script>
+        function debug() {
+            debugger;
+
+            const a = parseFloat(document.getElementById("bilangan1").value);
+            const b = parseFloat(document.getElementById("bilangan2").value);
+            const hasilElement = document.getElementById("hasil");
+
+            function pembagian(a, b) {
+                if (b === 0) {
+                    throw new Error("Tidak dapat membagi dengan 0.");
+                }
+                return a / b;
+            }
+
+            try {
+                var result = pembagian(a, b);
+                hasilElement.textContent = "Hasil pembagian: " + result;
+            } catch (err) {
+                console.error("Error:", err.message);
+                hasilElement.textContent = "Terjadi kesalahan: " + err.message;
+            } finally {
+                console.log("Hasil pembagian:", result);
+            }
+        }
+    </script>
+</body>
+</html>

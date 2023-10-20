@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Local Storage & Session Storage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,500&display=swap"rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+    <h1>RUMAH SAKIT SUKA SEHAT</h1>
+    <div class="table__container">
+        <h3>DAFTAR PASIEN RUMAH SAKIT SUKA SEHAT</h3>
+
+        <div class="search">
+            <input type="text" placeholder="Cari data pasien" class="search__bar" id="searchInput">
+            <button id="searching" class="btn btn__search" onclick="searchpasiens()">Cari</button>
+        </div>
+        <table id="tabel_pasien">
+            <tr class="first__row">
+                <th>Nomor ID</th>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>Penyakit</th>
+                <th>Nomor Ruang</th>
+                <th>BPJS</th>
+                <th>Tanggal Masuk</th>
+                <th>Tanggal Keluar</th>
+                <th>Aksi</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button onclick="showForm()" id="tambah" class="btn btn__tambah">Tambah Data</button>
+    </div>
+
+
+    <div class="form" id="formulir">
+        <h3>Formulir Pasien</h3>
+
+        <label for="nama" class="label">Nama Pasien</label><br>
+        <input type="text" id="nama" class="input-form" required><br>
+
+        <label for="alamat" class="label">Alamat Pasien</label><br>
+        <input type="text" id="alamat" class="input-form"><br>
+
+        <label for="penyakit" class="label">Penyakit</label><br>
+        <input type="text" id="penyakit" class="input-form"><br>
+
+        <label for="ruang" class="label">Nomor Ruang</label><br>
+        <input type="text" id="ruang" class="input-form"><br>
+
+        <label for="bpjs">BPJS</label><br>
+        <select name="bpjs" id="bpjs" form="bpjsform" class="selectbpjs">
+            <option value="Tidak Memakai">Tidak Memakai</option>
+            <option value="Kelas I">Kelas I</option>
+            <option value="Kelas II">Kelas II</option>
+            <option value="Kelas III">Kelas III</option>
+        </select><br>
+
+        <label for="masuk" class="label">Tanggal Masuk</label><br>
+        <input type="date" id="masuk" class="input-form"><br>
+
+        <label for="keluar" class="label">Tanggal Keluar</label><br>
+        <input type="date" id="keluar" class="input-form">
+
+        <input type="hidden" id="editId" value="">
+
+        <div>
+            <button type="submit" id="submit" onclick="submitForm()" class="btn submit">Submit</button>
+            <button id="cancel" onclick="hideForm()" class="btn submit">Cancel</button>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

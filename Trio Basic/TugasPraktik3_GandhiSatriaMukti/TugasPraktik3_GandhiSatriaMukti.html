@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulir Pendaftaran</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <h1><u>FORMULIR PENDAFTARAN</u></h1>
+
+      <video width="360" height="240" controls style="margin: 1rem">
+        <source src="video.mp4" type="Video/MP4" />
+      </video>
+
+      <div>
+        <canvas
+          id="CanvasSy"
+          width="360"
+          height="180"
+          style="
+            background: linear-gradient(
+              311deg,
+              rgba(165, 185, 220, 1) 0%,
+              rgba(59, 82, 193, 1) 82%
+            );
+          "
+        >
+        </canvas>
+      </div>
+
+      <form>
+        <br />
+        <label for="fname">Nama Lengkap &nbsp &nbsp:</label>
+        <input type="text" id="fname" name="fname" style="width: 14.5rem" />
+        <br /><br />
+        <label for="fttl">Tempat Lahir &nbsp &nbsp &nbsp :</label>
+        <input type="text" id="fttl" name="fttl" style="width: 14.5rem" />
+        <br />
+        <br />
+        <label for="fttl">Tanggal Lahir &nbsp &nbsp &nbsp:</label>
+        <input type="date" style="cursor: pointer" /> <br />
+        <br />
+        <label for="fttl">Jenis Kelamin &nbsp &nbsp &nbsp:</label>
+        <input type="radio" name="kelamin" style="cursor: pointer" /><label
+          >Laki-Laki</label
+        >
+        <input type="radio" name="kelamin" style="cursor: pointer" /><label
+          >Perempuan</label
+        >
+        <br /><br />
+        <label for="fname"
+          >Alamat &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          :</label
+        >
+        <textarea name="alamat" id="alamat" cols="30" rows="10"></textarea>
+        <br /><br />
+        <label for="fname"
+          >Email &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          :</label
+        >
+        <input type="text" id="fname" name="fname" style="width: 14.5rem" />
+        <br /><br />
+        <label for="fname"
+          >No HP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+          :</label
+        >
+        <input type="text" id="fname" name="fname" style="width: 14.5rem" />
+        <br /><br />
+
+        <label for="fname"
+          >Kota &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          &nbsp; :</label
+        >
+        <select name="kota" id="s_kota" style="cursor: pointer">
+          <option value="Salatiga">*****Pilih Kota*****</option>
+          <option value="Salatiga">Semarang</option>
+          <option value="Salatiga">Solo</option>
+          <option value="Salatiga">Boyolali</option>
+          <option value="Salatiga">Salatiga</option>
+          <option value="Salatiga">...</option>
+        </select>
+
+        <br /><br />
+        <button onclick="save()" style="cursor: pointer">Simpan</button>
+        <button onclick="cancel()" style="cursor: pointer">Batal</button>
+      </form>
+    </div>
+
+    <script>
+      var c = document.getElementById("CanvasSy");
+      var ctext = c.getContext("2d");
+      ctext.font = "30px Text New Roman";
+      ctext.strokeText("Educa Studio", 100, 100);
+
+      function save() {
+        alert("Data disimpan!");
+      }
+      function cancel() {
+        alert("Dibatalkan!");
+      }
+    </script>
+  </body>
+</html>

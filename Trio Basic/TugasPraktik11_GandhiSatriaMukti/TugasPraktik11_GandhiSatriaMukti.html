@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<head>
+<title>Local Storage & Session Storage</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background: #272829;
+    }
+    .local-container{
+        background: whitesmoke;
+        padding: 2rem;
+        border-radius: 10px;
+        width: max-content;
+    }
+    .label {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    input {
+        border-radius: 4px;
+        padding: 0.3rem 1rem;
+        margin-top: 1rem;
+    }
+    button {
+        padding: 0.3rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .localo-container {
+        background: whitesmoke;
+        padding: 2rem;
+        margin-top: 2rem;
+        border-radius: 12px;
+        width: max-content;
+    }
+    table, tr, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 0.2rem 2rem;
+        text-align: center;
+    }
+    #local-output {
+        margin-top: 0.5rem;
+    }
+    .container {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .local {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .session {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        color: white;
+    }
+</style>
+<body>
+<center>
+    <h1>Tugas Praktik 11</h1>
+</center>
+
+<div class="container">
+    <div class="local">
+        <div class="local-container">
+            <label for="local-input" class="label">Local Storage</label>
+            <br>
+            <input type="text" id="local-input">
+            <button id="local-button">Submit</button>
+        </div>
+        <div class="localo-container">
+            <p class="label">Local Storage Output</p>
+            <p id="local-output"></p>
+            <button id="local-button-rm">Clear</button>
+        </div>
+    </div>
+
+    <div class="session">
+        <div class="local-container">
+            <label for="session-input" class="label">Session Storage</label>
+            <br>
+            <input type="text" id="session-input">
+            <button id="session-button">Submit</button>
+        </div>
+        <div class="localo-container">
+            <p class="label">Session Storage Output</p>
+            <p id="session-output"></p>
+            <button id="session-button-rm">Clear</button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+// LOCAL STORAGE
+  const localInput = document.getElementById("local-input");
+  const localButton = document.getElementById("local-button");
+  const localOutput = document.getElementById("local-output");
+  const localButtonRm = document.getElementById("local-button-rm");
+
+  localButton.addEventListener("click", function() {
+    const inputValue = localInput.value;
+    const storedValues = JSON.parse(localStorage.getItem("localData")) || [];
+    storedValues.push(inputValue);
+    localStorage.setItem("localData", JSON.stringify(storedValues));
+    updateLocalOutput(storedValues);
+  });
+
+  const localStoredValues = JSON.parse(localStorage.getItem("localData")) || [];
+  updateLocalOutput(localStoredValues);
+
+  function updateLocalOutput(values) {
+    localOutput.innerHTML = values.map((value, index) => `${value} <button onclick="deleteLocalValue(${index})">Hapus</button>`).join("<br>");
+  }
+
+  function deleteLocalValue(index) {
+    const storedValues = JSON.parse(localStorage.getItem("localData")) || [];
+    storedValues.splice(index, 1);
+    localStorage.setItem("localData", JSON.stringify(storedValues));
+    updateLocalOutput(storedValues);
+  }
+
+  localButtonRm.addEventListener("click", function() {
+    localStorage.clear("localData");
+    updateLocalOutput([]);
+  })
+
+  const sessionInput = document.getElementById("session-input");
+  const sessionButton = document.getElementById("session-button");
+  const sessionOutput = document.getElementById("session-output");
+  const sessionButtonRm = document.getElementById("session-button-rm");
+
+ // Session Storage
+ sessionButton.addEventListener("click", function() {
+    const inputValue = sessionInput.value;
+    const storedValues = JSON.parse(sessionStorage.getItem("sessionData")) || [];
+    storedValues.push(inputValue);
+    sessionStorage.setItem("sessionData", JSON.stringify(storedValues));
+    updateSessionOutput(storedValues);
+  });
+
+  sessionButtonRm.addEventListener("click", function() {
+    sessionStorage.clear("sessionData");
+    updateSessionOutput([]);
+  });
+
+  const sessionStoredValues = JSON.parse(sessionStorage.getItem("sessionData")) || [];
+  updateSessionOutput(sessionStoredValues);
+
+  function updateSessionOutput(values) {
+    sessionOutput.innerHTML = values.map((value, index) => `${value} <button onclick="deleteSessionValue(${index})">Hapus</button>`).join("<br>");
+  }
+
+  function deleteSessionValue(index) {
+    const storedValues = JSON.parse(sessionStorage.getItem("sessionData")) || [];
+    storedValues.splice(index, 1);
+    sessionStorage.setItem("sessionData", JSON.stringify(storedValues));
+    updateSessionOutput(storedValues);
+  }
+</script>
+</body>
+</html>

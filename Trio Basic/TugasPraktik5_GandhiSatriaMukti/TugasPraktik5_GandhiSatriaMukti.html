@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<head>
+  <title>Tugas Praktik 5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+<style>
+  * {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+  }
+  body {
+    background: rgb(176, 227, 246);
+    background: linear-gradient(
+      360deg,
+      rgba(176, 227, 246, 1) 0%,
+      rgba(0, 143, 218, 1) 100%
+    );
+    height: 200vh;
+  }
+  nav {
+    width: 100vw;
+    position: fixed;
+    background: rgba(0, 143, 218, 1);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.46);
+  }
+  .container{
+    margin: 0 5rem;
+  }
+  .navbar-container {
+    padding: 1rem 5rem 0.5rem 5rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+  }
+  .navbar-text {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    font-weight: 500;
+  }
+  .btn-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .btn {
+    cursor: pointer;
+  }
+  .btn:hover {
+    filter: brightness(90%);
+  }
+  .btn-search {
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-dashboard {
+    background: white;
+    height: 30px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: rgba(0, 143, 218, 1);
+    display: flex;
+    align-items: center;
+  }
+  .search-img {
+    width: 20px;
+  }
+  .beasiswa {
+    display: flex;
+    align-items: center;
+  }
+  .beasiswa p {
+    background: gold;
+    padding: 0 0.3rem;
+    border-radius: 5px;
+    margin-left: 0.3rem;
+    font-size: small;
+    font-weight: 600;
+    cursor: default;
+    margin-top: 0.2rem;
+  }
+  .dropbtn {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  .dropbtn:hover,
+  .dropbtn:focus {
+    color: lightblue;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: white;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background: lightgray;
+    color: black;
+    text-decoration: none;
+  }
+  .show {
+    display: block;
+  }
+  .content1-container{
+    padding-top: 8rem;
+    display: grid;
+    grid-template-columns: 50% 45%;
+    align-items: center;
+    height: 75vh;
+  }
+  .content2-container{
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+  }
+  .left{
+    color: white;
+  }
+  .btn1{
+    background: gold;
+    font-weight: 600;
+    border: none;
+    padding: 0.5rem 1.3rem;
+    border-radius: 5px;
+  }
+  .btn-outline{
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.4rem 1.2rem;
+  }
+  .btn-outline:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+  }
+  .button-home{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+  }
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 6rem;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-thickness: 3px;
+    text-decoration-color: white;
+    color: lightblue;
+  }
+  span{
+    color: rgba(0, 143, 218, 1);
+  }
+</style>
+<body>
+  <nav>
+    <div class="navbar-container">
+      <div>
+        <img
+          src="https://www.gamelab.id/img/Logo_GameLab_Landscape_White.png?v=3.10?v=3.1?v=1.1"
+          alt="logos"
+        />
+      </div>
+      <div class="navbar-text">
+        <a href="#">Magang</a>
+        <div class="beasiswa">
+          <a href="#">Beasiswa</a>
+          <p>New</p>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="myFunction()">
+            SMK
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Menu 1</a>
+            <a href="#">Menu 2</a>
+            <a href="#">Menu 3</a>
+          </div>
+        </div>
+        <a href="#">Karir</a>
+        <a href="#">Komunitas</a>
+      </div>
+      <div class="btn-section">
+        <div class="btn btn-search">
+          <img
+            class="search-img"
+            src="https://cdn-icons-png.flaticon.com/128/151/151773.png"
+            alt=""
+          />
+        </div>
+        <div class="btn btn-dashboard">
+          <p>Dashboard</p>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+      <div class="content1-container">
+        <div class="left">
+            <h1>Raih Masa Depan Brilian dengan Optimasi Skill Digital</h1>
+            <p>GAMELAB.ID membantumu mengoptimalkan skill agar siap kerja melalui program pelatihan, magang online, 
+                dan kelas intensif yang diampu oleh para profesional di bidangnya.</p>
+            <div class="button-home">
+                <button class="btn btn1">Daftar Gratis Sekarang</button>
+                <button class="btn1 btn-outline">Lihat Kelas</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="https://www.gamelab.id/img/home/Atas%201.png" alt="">
+        </div>
+      </div>
+      <div class="content2-container">
+        <h1>TengaH<span>.</span></h1>
+      </div>
+      <div class="footer">
+          <small>sekian, terima kasih. -GandhiSatria</small>
+      </div>
+  </div>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+</body>

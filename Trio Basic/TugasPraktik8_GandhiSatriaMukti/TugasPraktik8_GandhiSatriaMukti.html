@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Tugas Praktik 8</title>
+</head>
+<body>
+    <h3>Browser Object Model JS.</h3>
+    <p>macam - macam browser object model.</p>
+
+    <h4 id="sapa"></h4>
+
+    <button onclick=alerta()>Tombol Alert</button>
+    <button onclick=input()>Tombol Prompt</button>
+
+    <script>
+        function alerta() {
+            alert('Tombol alert diklik!');
+            console.log("Tombol alert diklik!");
+        }
+        function input(){
+            let nama = prompt('Tombol prompt diklik!', 'Nama Anda');
+            let sapaan = "Halo, "+ nama;
+            document.getElementById("sapa").innerHTML = sapaan;
+            console.log("Tombol prompt diklik oleh "+nama+"!");
+        }
+    </script>
+</body>
